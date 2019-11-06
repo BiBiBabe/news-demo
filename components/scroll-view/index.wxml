@@ -1,7 +1,0 @@
-<!--components/scroll-view/index.wxml-->
-<view class="">
-  <scroll-view class="scroll_view" scroll-x>
-    <view class="scroll_item {{index == activeIndex ? 'active_item' : ''}}" wx:for="{{tabList}}" wx:key="{{index}}" data-index="{{index}}" bind:tap="changeTabs">{{item}}</view>
-  </scroll-view>
-  <slot />
-</view>

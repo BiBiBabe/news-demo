@@ -1,0 +1,69 @@
+<!--pages/detail/index.wxml-->
+<view class="page">
+
+  <view class="list">
+
+    <view class="item">
+      <view class="item_title">头像</view>
+      <view class="item_right">
+        <view class="header_img"><open-data type="userAvatarUrl"></open-data></view>
+        <image class="item_img" src="../../images/arrow.svg" />
+      </view>
+    </view>
+
+    <view class="item">
+      <view class="item_title">用户名</view>
+      <view class="">
+        <open-data type="userNickName"></open-data>
+        <image class="item_img" src="../../images/arrow.svg" />
+      </view>
+    </view>
+
+    <view class="item" bind:tap="navigateTo">
+      <view class="item_title">介绍</view>
+      <image class="item_img" src="../../images/arrow.svg" />
+    </view>
+    
+  </view>
+
+  <view class="list">
+
+    <view class="item">
+      <view class="item_title">性别</view>
+      <view class="item_right">
+        <radio-group class="radio-group" bindchange="radioChange">
+          <label class="radio" wx:for="{{items}}" wx:key="{{index}}">
+            <radio class="radio" value="{{item.name}}" checked="{{item.checked}}" disabled="{{item.disabled}}" />{{item.value}}
+          </label>
+        </radio-group>
+      </view>
+    </view>
+
+    <view class="item">
+      <view class="item_title">生日</view>
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <view class="">
+          <view class="item_text" wx:if="{{!date}}">待完善</view>
+          <view class="item_text item_date" wx:else>{{date}}</view>
+          <image class="item_img" src="../../images/arrow.svg" />
+        </view>
+      </picker>
+    </view>
+
+    <view class="item">
+      <view class="item_title">地区</view>
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="">
+          <view class="item_text" wx:if="{{!region.length}}">待完善</view>
+          <view class="item_text item_date" wx:else>{{region}}</view>
+          <image class="item_img" src="../../images/arrow.svg" />
+        </view>
+      </picker>
+    </view>
+
+  </view>
+
+  <view class="item quit">
+    <view class="item_title">保存</view>
+  </view>
+</view>

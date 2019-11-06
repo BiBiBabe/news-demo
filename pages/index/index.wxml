@@ -1,0 +1,65 @@
+<!--pages/index/index.wxml-->
+<view class="page">
+  <view class="header">
+    <view class="header_title">报道素材库</view>
+    <view class="header_search">
+      <image class="header_icon" src="../../images/index/search.png" />
+      <input class="header_input" />
+    </view>
+    <!-- <view class="header_">
+      <view class=""></view>
+      <view class=""></view>
+    </view> -->
+  </view>
+  <view class="main">
+    <!-- <tabs activeIndex="{{0}}" tabList="{{tabList}}">
+      <view class="">
+        <view class="" wx:if="{{index === activeIndex}}"></view>
+      </view>
+    </tabs> -->
+    <scroll-view class="scroll_view" scroll-x>
+      <view class="scroll_item {{index == activeIndex ? 'active_item' : ''}}" wx:for="{{tabList}}" wx:key="{{index}}" data-index="{{index}}" bind:tap="changeTabs">{{item}}</view>
+    </scroll-view>
+    <view class="">
+
+      <view class="panel" wx:if="{{0 === activeIndex}}">
+        <view class="item" wx:for="{{newslist}}" wx:key="{{item.id}}">
+          <view class="item_title">{{item.title}}</view>
+          <view class="item_subtitle">{{item.subtitle}} {{item.time}}</view>
+        </view>
+      </view>
+
+      <view class="panel" wx:if="{{1 === activeIndex}}">
+        <view class="item" wx:for="{{piclist}}" wx:key="{{item.id}}">
+          <view class="item_title">{{item.title}}</view>
+          <view class="item_img">
+            <image class="" src="{{item.img}}" />
+            <image class="" src="{{item.img1}}" />
+            <image class="" src="{{item.img2}}" />
+          </view>
+          <view class="item_subtitle">{{item.subtitle}} {{item.time}}</view>
+        </view>
+      </view>
+
+      <view wx:if="{{2 === activeIndex}}">视频</view>
+      <view wx:if="{{3 === activeIndex}}">讲话全文</view>
+      <view wx:if="{{4 === activeIndex}}">版面</view>
+      <view wx:if="{{5 === activeIndex}}">政策</view>
+      <view wx:if="{{6 === activeIndex}}">法律法规</view>
+      <view wx:if="{{7 === activeIndex}}">测试</view>
+      <view wx:if="{{8 === activeIndex}}">测试</view>
+
+      <view class="more" wx:if="{{activeIndex < 2}}">加载更多</view>
+    </view>
+  </view>
+  <!-- <view class="list">
+    <view class="item" wx:for="{{menulist}}" wx:key="{{index}}" data-id="{{item.id}}" bind:tap="goToDetail">
+      <image class="item_img" src="{{item.img}}" />
+      <view class="item_main">
+        <view class="item_main_title">{{item.title}}</view>
+        <view class="item_main_sub">{{item.subtitle}}</view>
+        <view class="item_main_price">￥{{item.price}}</view>
+      </view>
+    </view>
+  </view> -->
+</view>

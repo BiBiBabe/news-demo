@@ -1,0 +1,9 @@
+<!--pages/intro/index.wxml-->
+<view class="page">
+  <view class="container">
+    <textarea placeholder="请在这里填写您的介绍..." auto-focus />
+  </view>
+  <view class="item quit">
+    <view class="item_title">完成</view>
+  </view>
+</view>

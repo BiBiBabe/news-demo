@@ -1,0 +1,17 @@
+/* components/scroll-view/index.wxss */
+
+.scroll_view{
+  white-space: nowrap;
+  display: flex;
+  background: #fff;
+  /* border-bottom: 1rpx solid #ccc; */
+}
+.scroll_item{
+  display: inline-block;
+  padding: 20rpx 0;
+  margin: 0 38rpx;
+}
+.active_item{
+  color: #CE3232;
+  border-bottom: 4rpx solid #CE3232;
+}

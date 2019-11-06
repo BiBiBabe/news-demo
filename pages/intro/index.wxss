@@ -1,0 +1,25 @@
+/* pages/intro/index.wxss */
+
+.page{
+  min-height: 100vh;
+  padding-bottom: 1rpx;
+  background: rgba(220, 220, 220, 0.3)
+}
+.container{
+  background: #fff;
+  padding: 20rpx 30rpx;
+}
+.item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx 20rpx;
+  height: 72rpx;
+  background: #fff;
+  margin-top: 30rpx;
+}
+.item_title{
+  font-size: 30rpx;
+  color: #272323;
+  line-height: 44rpx;
+}
